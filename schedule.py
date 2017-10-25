@@ -6,7 +6,7 @@ wgweek = open("wgweekfile.txt","r")
 wg = wgweek.read()
 wgweek.close()
 print(wg)
-
+changewg = False
 
 clock = (time.ctime())
 hour = clock[11:13]
