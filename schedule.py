@@ -18,7 +18,7 @@ print (clock)
 whatclass = ("none")
 while True:
     if wg == ("0"):
-        if day == ("Mon"):  
+        if day == ("Mon"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Building Open")
             elif currenttime < 508.8 and currenttime > 480:
@@ -43,7 +43,7 @@ while True:
                 whatclass = ("2nd Peorid")
             elif currenttime < 912 and currenttime > 856.3:
                 whatclass = ("3rd Peorid")
-        if day == ("Tue"):   
+        if day == ("Tue"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Building Open")
             elif currenttime < 547.1 and currenttime > 480.1:
@@ -64,7 +64,7 @@ while True:
                 whatclass = ("Afternoon Break")
             elif currenttime < 912.0 and currenttime > 843.1:
                 whatclass = ("5th Period")
-        if day == ("Wed"):   
+        if day == ("Wed"):
             if currenttime < 540 and currenttime > 420:
                 whatclass = ("Building Open")
             elif currenttime < 605.4 and currenttime > 540.1:
@@ -83,7 +83,7 @@ while True:
                 whatclass = ("Afternoon Break")
             elif currenttime < 912.0 and currenttime > 845.5:
                 whatclass = ("2nd Period")
-        if day == ("Thu"):   
+        if day == ("Thu"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Bulding Open")
             elif currenttime < 547.1 and currenttime > 480.1:
@@ -104,7 +104,7 @@ while True:
                 whatclass = ("Afternoon Break")
             elif currenttime < 912.0 and currenttime > 843.1:
                 whatclass = ("7th Period")
-        if day == ("Fri"):   
+        if day == ("Fri"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Building Open")
             elif currenttime < 508.8 and currenttime > 480:
@@ -129,8 +129,11 @@ while True:
                 whatclass = ("3rd Peorid")
             elif currenttime < 912 and currenttime > 856.3:
                 whatclass = ("4th Peorid")
+            elif currenttime < 912.1:
+                changewg = True
+                changewgvalue = ("1")
     if wg == ("1"):
-        if day == ("Mon"):  
+        if day == ("Mon"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Building Open")
             elif currenttime < 508.8 and currenttime > 480:
@@ -155,7 +158,7 @@ while True:
                 whatclass = ("2nd Peorid")
             elif currenttime < 912 and currenttime > 856.3:
                 whatclass = ("3rd Peorid")
-        if day == ("Tue"):   
+        if day == ("Tue"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Building Open")
             elif currenttime < 547.1 and currenttime > 480.1:
@@ -176,7 +179,7 @@ while True:
                 whatclass = ("Afternoon Break")
             elif currenttime < 912.0 and currenttime > 843.1:
                 whatclass = ("2nd Period")
-        if day == ("Wed"):   
+        if day == ("Wed"):
             if currenttime < 540 and currenttime > 420:
                 whatclass = ("Building Open")
             elif currenttime < 605.4 and currenttime > 540.1:
@@ -195,7 +198,7 @@ while True:
                 whatclass = ("Afternoon Break")
             elif currenttime < 912.0 and currenttime > 845.5:
                 whatclass = ("6th Period")
-        if day == ("Thu"):   
+        if day == ("Thu"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Bulding Open")
             elif currenttime < 547.1 and currenttime > 480.1:
@@ -216,7 +219,7 @@ while True:
                 whatclass = ("Afternoon Break")
             elif currenttime < 912.0 and currenttime > 843.1:
                 whatclass = ("4th Period")
-        if day == ("Fri"):   
+        if day == ("Fri"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Building Open")
             elif currenttime < 508.8 and currenttime > 480:
@@ -241,9 +244,15 @@ while True:
                 whatclass = ("7th Peorid")
             elif currenttime < 912 and currenttime > 856.3:
                 whatclass = ("1st Peorid")
-                
-        
+            elif currenttime < 912.1:
+                changewg = True
+                changewgvalue = ("0")
+
+
     print(whatclass)
     time.sleep(60)
-    
-
+    if changewg == True:
+        wgweek_write = open("wgweekfile.txt","w")
+        new_days.write(changewgvalue)
+        wgweek_write.close()
+        changewg = False
