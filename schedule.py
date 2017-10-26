@@ -16,7 +16,7 @@ day = clock[0:3]
 print (currenttime)
 print (clock)
 whatclass = ("none")
-while True:
+def getclass():
     if wg == ("3"):
         print ("hi")
         changewgvalue = input("Please set white and gold ")
@@ -252,7 +252,8 @@ while True:
                 changewg = ("true")
                 changewgvalue = ("0")
 
-
+while True:
+    getclass()
     print(whatclass)
     time.sleep(60)
     if changewg == ("true"):
