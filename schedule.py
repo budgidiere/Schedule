@@ -259,4 +259,4 @@ while True:
         wgweek_write = open("wgweekfile.txt","w")
         wgweek_write.write(changewgvalue)
         wgweek_write.close()
-        changewg = False
+        changewg = ("false")
