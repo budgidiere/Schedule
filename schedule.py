@@ -2,7 +2,7 @@
 print("Starting Now")
 print("LOADING APIS")
 import time
-wgweek = open("wgweekfile.txt","r")
+wgweek = open("wgweekfile.txt", "r")
 wg = wgweek.read()
 wgweek.close()
 print(wg)
