@@ -261,6 +261,8 @@ def getclass():
                 whatclass = ("1st Peorid")
             elif currenttime < 912.1:
                 changewg(0)
+    else:
+        whatclass = ("none")
 #Main part of the program
 while True:
     #read wg value
