@@ -5,9 +5,7 @@ import time
 wgweek = open("wgweekfile.txt","r")
 wg = wgweek.read()
 wgweek.close()
-print(wg)
-changewg = ("true")
-
+print(str(wg))
 clock = (time.ctime())
 hour = clock[11:13]
 minute = clock[14:16]
@@ -16,12 +14,18 @@ day = clock[0:3]
 print (currenttime)
 print (clock)
 whatclass = ("none")
+def changewg(value):
+    print("ok")
+    wgweek_write = open("wgweekfile.txt","w")
+    wgweek_write.write(str(value))
+    wgweek_write.close()
+    changewg = ("false")
+if str(wg) == (3):
+    print ("hi")
+    changewgvalue = input("Please set white and gold ")
+    changewg(changewgvalue)
 def getclass():
-    if wg == ("3"):
-        print ("hi")
-        changewgvalue = input("Please set white and gold ")
-        changewg = ("true")
-    if wg == ("0"):
+    if str(wg) == (0):
         if day == ("Mon"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Building Open")
@@ -134,9 +138,8 @@ def getclass():
             elif currenttime < 912 and currenttime > 856.3:
                 whatclass = ("4th Peorid")
             elif currenttime < 912.1:
-                changewg = ("true")
-                changewgvalue = ("1")
-    elif wg == ("1"):
+                changewg(1)
+    elif str(wg) == (1):
         if day == ("Mon"):
             if currenttime < 480 and currenttime > 420:
                 whatclass = ("Building Open")
@@ -249,15 +252,9 @@ def getclass():
             elif currenttime < 912 and currenttime > 856.3:
                 whatclass = ("1st Peorid")
             elif currenttime < 912.1:
-                changewg = ("true")
-                changewgvalue = ("0")
+                changewg(0)
 
 while True:
     getclass()
     print(whatclass)
     time.sleep(60)
-    if changewg == ("true"):
-        wgweek_write = open("wgweekfile.txt","w")
-        wgweek_write.write(changewgvalue)
-        wgweek_write.close()
-        changewg = ("false")
