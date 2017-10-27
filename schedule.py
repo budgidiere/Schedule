@@ -1,11 +1,8 @@
-#schudgule
-print("Starting Now")
-print("LOADING APIS")
+#schedule.py
+#importing time
 import time
-wgweek = open("wgweekfile.txt","r")
-wg = wgweek.read()
-wgweek.close()
-print(str(wg))
+
+#Making time readable format
 clock = (time.ctime())
 hour = clock[11:13]
 minute = clock[14:16]
@@ -13,17 +10,28 @@ currenttime = 60*int(hour) + int(minute)
 day = clock[0:3]
 print (currenttime)
 print (clock)
+#IDK why this is here
 whatclass = ("none")
+
+#used to read White and Gold week Value
+def readwg():
+    wgweek = open("wgweekfile.txt","r")
+    wg = wgweek.read()
+    wgweek.close()
+#Used to wirte white and gold value
 def changewg(value):
     print("ok")
     wgweek_write = open("wgweekfile.txt","w")
     wgweek_write.write(str(value))
     wgweek_write.close()
     changewg = ("false")
-if str(wg) == (3):
-    print ("hi")
-    changewgvalue = input("Please set white and gold ")
-    changewg(changewgvalue)
+#cheking if this is frist run
+def checkfirstrun():
+    if str(wg) == (3):
+        print ("hi")
+        changewgvalue = input("Please set white and gold ")
+        changewg(changewgvalue)
+#Used to detirmen class
 def getclass():
     if str(wg) == (0):
         if day == ("Mon"):
@@ -253,8 +261,15 @@ def getclass():
                 whatclass = ("1st Peorid")
             elif currenttime < 912.1:
                 changewg(0)
-
+#Main part of the program
 while True:
+    #read wg value
+    readwg()
+    #cheks if it's  first run
+    checkfirstrun()
+    #get what class it is
     getclass()
+    #prints the class (will be replaced)
     print(whatclass)
+    #sleeps so no spam
     time.sleep(60)
