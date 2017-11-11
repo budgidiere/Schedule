@@ -15,6 +15,7 @@ whatclass = ("none")
 
 #used to read White and Gold week Value
 def readwg():
+    global wg
     wgweek = open("wgweekfile.txt","r")
     wg = wgweek.read()
     wgweek.close()
@@ -33,6 +34,7 @@ def checkfirstrun():
         changewg(changewgvalue)
 #Used to detirmen class
 def getclass():
+    global whatclass
     if str(wg) == (0):
         if day == ("Mon"):
             if currenttime < 480 and currenttime > 420:
