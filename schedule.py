@@ -28,7 +28,7 @@ def changewg(value):
     changewg = ("false")
 #cheking if this is frist run
 def checkfirstrun():
-    if str(wg) == (3):
+    if str(wg) == (str(3)):
         print ("hi")
         changewgvalue = input("Please set white and gold ")
         changewg(changewgvalue)
